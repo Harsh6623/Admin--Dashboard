@@ -1,33 +1,25 @@
-import styles from "@/app/ui/dashboard/users/addUser/addUser.module.css";
+import styles from "@/app/ui/dashboard/products/addProduct/addProduct.module.css";
 
-const AddUserPage = () => {
+const AddProductPage = () => {
   return (
     <div className={styles.container}>
-      <form action={addUser} className={styles.form}>
-        <input type="text" placeholder="username" name="username" required />
-        <input type="email" placeholder="email" name="email" required />
-        <input
-          type="password"
-          placeholder="password"
-          name="password"
-          required
-        />
-        <input type="phone" placeholder="phone" name="phone" />
-        <select name="isAdmin" id="isAdmin">
-          <option value={false}>Is Admin?</option>
-          <option value={true}>Yes</option>
-          <option value={false}>No</option>
+      <form action="" className={styles.form}>
+        <input type="text" placeholder="title" name="title" required />
+        <select name="cat" id="cat">
+          <option value="general">Choose a Category</option>
+          <option value="kitchen">Kitchen</option>
+          <option value="phone">Phone</option>
+          <option value="computer">Computer</option>
         </select>
-        <select name="isActive" id="isActive">
-          <option value={true}>Is Active?</option>
-          <option value={true}>Yes</option>
-          <option value={false}>No</option>
-        </select>
+        <input type="number" placeholder="price" name="price" />
+        <input type="number" placeholder="stock" name="stock" />
+        <input type="text" placeholder="color" name="color" />
+        <input type="text" placeholder="size" name="size" />
         <textarea
-          name="address"
-          id="address"
+          name="desc"
+          id="desc"
           rows="16"
-          placeholder="Address"
+          placeholder="Description"
         ></textarea>
         <button type="submit">Submit</button>
       </form>
@@ -35,4 +27,4 @@ const AddUserPage = () => {
   );
 };
 
-export default AddUserPage;
+export default AddProductPage;
