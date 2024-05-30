@@ -1,36 +1,38 @@
 import styles from "@/app/ui/dashboard/products/singleProduct/singleProduct.module.css";
 
-const SingleUserPage = () => {
+const SingleProductPage = () => {
   return (
     <div className={styles.container}>
       <div className={styles.infoContainer}>
         <div className={styles.imgContainer}>
           <img src="/noavatar.png" alt="" fill />
         </div>
-        John Doe
+        I Phone
       </div>
       <div className={styles.formContainer}>
         <form action="" className={styles.form}>
-          <label>Username</label>
-          <input type="text" name="username" placeholder="John Doe" />
-          <label>Email</label>
-          <input type="email" name="email" placeholder="JohnDoe@gmail.com" />
-          <label>Password</label>
-          <input type="password" name="password" />
-          <label>Phone</label>
-          <input type="text" name="phone" placeholder="+1234567" />
-          <label>Address</label>
-          <textarea type="text" name="address" placeholder="New York" />
-          <label>Is Admin?</label>
-          <select name="isAdmin" id="isAdmin">
-            <option value={true}>Yes</option>
-            <option value={false}>No</option>
+          <label>Title</label>
+          <input type="text" name="title" placeholder="John Doe" />
+          <label>Price</label>
+          <input type="number" name="price" placeholder="JohnDoe@gmail.com" />
+          <label>Stock</label>
+          <input type="number" name="stock" placeholder="23" />
+          <label>Color</label>
+          <input type="text" name="color" placeholder="red" />
+          <label>Size</label>
+          <textarea type="text" name="size" placeholder="New York" />
+          <label>Cat</label>
+          <select name="cat" id="cat">
+            <option value="Kitchen">Kitchen</option>
+            <option value="computers">Computers</option>
           </select>
-          <label>Is Active?</label>
-          <select name="isActive" id="isActive">
-            <option value={true}>Yes</option>
-            <option value={false}>No</option>
-          </select>
+          <label>Description</label>
+          <textarea
+            name="desc"
+            id="desc"
+            rows="10"
+            placeholder="description"
+          ></textarea>
           <button>Update</button>
         </form>
       </div>
@@ -38,4 +40,4 @@ const SingleUserPage = () => {
   );
 };
 
-export default SingleUserPage;
+export default SingleProductPage;
