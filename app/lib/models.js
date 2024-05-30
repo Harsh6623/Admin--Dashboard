@@ -49,7 +49,6 @@ const productSchema = new mongoose.Schema(
     desc: {
       type: String,
       required: true,
-      unique: true,
     },
     price: {
       type: Number,
@@ -74,6 +73,6 @@ const productSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-export const User = mongoose.model.User || mongoose("User", userSchema);
+export const User = mongoose.models.User || mongoose.model("User", userSchema);
 export const Product =
-  mongoose.model.Product || mongoose("Product", productSchema);
+  mongoose.models.Product || mongoose.model("Product", productSchema);

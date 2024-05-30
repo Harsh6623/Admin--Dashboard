@@ -5,7 +5,7 @@ const SingleProductPage = () => {
     <div className={styles.container}>
       <div className={styles.infoContainer}>
         <div className={styles.imgContainer}>
-          <img src="/noavatar.png" alt="" fill />
+          <img src="/noavatar.png" alt="" fill="true" />
         </div>
         I Phone
       </div>
