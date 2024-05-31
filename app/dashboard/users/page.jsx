@@ -5,9 +5,10 @@ import Link from "next/link";
 import { fetchUsers } from "@/app/lib/data";
 
 const UsersPage = async () => {
-  const users = await fetchUsers();
+  const q = searchParams?.q || "";
+  const page = searchParams?.page || 1;
+  const { count, users } = await fetchUsers(q, page);
 
-  console.log(users);
   return (
     <div className={styles.container}>
       <div className={styles.top}>
@@ -62,7 +63,7 @@ const UsersPage = async () => {
           ))}
         </tbody>
       </table>
-      <Pagination />
+      <Pagination count={count} />
     </div>
   );
 };
