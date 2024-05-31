@@ -3,6 +3,7 @@ import Pagination from "@/app/ui/dashboard/pagination/pagination";
 import Link from "next/link";
 import Search from "@/app/ui/dashboard/search/search";
 import { fetchProducts } from "@/app/lib/data";
+import { deleteProduct } from "../../lib/actions/deleteProduct";
 
 const ProductsPage = async ({ SearchParams }) => {
   const q = SearchParams?.q || "";
@@ -54,9 +55,12 @@ const ProductsPage = async ({ SearchParams }) => {
                       View
                     </button>
                   </Link>
-                  <button className={`${styles.button} ${styles.delete}`}>
-                    Delete
-                  </button>
+                  <form action={deleteProduct}>
+                    <input type="hidden" name="id" value={product.id} />
+                    <button className={`${styles.button} ${styles.delete}`}>
+                      Delete
+                    </button>
+                  </form>
                 </div>
               </td>
             </tr>
