@@ -39,7 +39,7 @@
   object-fit: cover;
 }
 
-.button {
+.buttons {
   display: flex;
   gap: 10px;
 }

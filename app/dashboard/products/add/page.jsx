@@ -1,5 +1,5 @@
+import { addProduct } from "@/app/lib/actions";
 import styles from "@/app/ui/dashboard/products/addProduct/addProduct.module.css";
-import { addProduct } from "../../../lib/actions";
 
 const AddProductPage = () => {
   return (
@@ -12,11 +12,12 @@ const AddProductPage = () => {
           <option value="phone">Phone</option>
           <option value="computer">Computer</option>
         </select>
-        <input type="number" placeholder="price" name="price" />
-        <input type="number" placeholder="stock" name="stock" />
+        <input type="number" placeholder="price" name="price" required />
+        <input type="number" placeholder="stock" name="stock" required />
         <input type="text" placeholder="color" name="color" />
         <input type="text" placeholder="size" name="size" />
         <textarea
+          required
           name="desc"
           id="desc"
           rows="16"

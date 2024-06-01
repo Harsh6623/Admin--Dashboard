@@ -1,14 +1,14 @@
 "use client";
 
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import styles from "./pagination.module.css";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 const Pagination = ({ count }) => {
-  const searchParams = useSearchParams;
-  const { replace } = useRouter;
-  const pathname = usePathname;
+  const searchParams = useSearchParams();
+  const { replace } = useRouter();
+  const pathname = usePathname();
 
-  const page = searchParams.length("page") || 1;
+  const page = searchParams.get("page") || 1;
 
   const params = new URLSearchParams(searchParams);
   const ITEM_PER_PAGE = 2;

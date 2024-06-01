@@ -1,13 +1,14 @@
-import styles from "@/app/ui/dashboard/products/products.module.css";
-import Pagination from "@/app/ui/dashboard/pagination/pagination";
+import Image from "next/image";
 import Link from "next/link";
+import styles from "@/app/ui/dashboard/products/products.module.css";
 import Search from "@/app/ui/dashboard/search/search";
+import Pagination from "@/app/ui/dashboard/pagination/pagination";
 import { fetchProducts } from "@/app/lib/data";
-import { deleteProduct } from "../../lib/actions/deleteProduct";
+import { deleteProduct } from "@/app/lib/actions";
 
-const ProductsPage = async ({ SearchParams }) => {
-  const q = SearchParams?.q || "";
-  const page = SearchParams?.page || 1;
+const ProductsPage = async ({ searchParams }) => {
+  const q = searchParams?.q || "";
+  const page = searchParams?.page || 1;
   const { count, products } = await fetchProducts(q, page);
 
   return (
@@ -34,7 +35,7 @@ const ProductsPage = async ({ SearchParams }) => {
             <tr key={product.id}>
               <td>
                 <div className={styles.product}>
-                  <img
+                  <Image
                     src={product.img || "/noproduct.jpg"}
                     alt=""
                     width={40}
@@ -46,10 +47,10 @@ const ProductsPage = async ({ SearchParams }) => {
               </td>
               <td>{product.desc}</td>
               <td>${product.price}</td>
-              <td>{product.createdAt?.toString().splice(4, 16)}</td>
+              <td>{product.createdAt?.toString().slice(4, 16)}</td>
               <td>{product.stock}</td>
               <td>
-                <div className={styles.button}>
+                <div className={styles.buttons}>
                   <Link href={`/dashboard/products/${product.id}`}>
                     <button className={`${styles.button} ${styles.view}`}>
                       View
